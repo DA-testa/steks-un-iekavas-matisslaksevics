@@ -13,7 +13,6 @@ def find_mismatch(text):
     for i, next in enumerate(text):
         if next in "([{":
             opening_brackets_stack.append(Bracket(next, i))
-
         if next in ")]}":
             if not opening_brackets_stack:
                 return i + 1
@@ -26,8 +25,21 @@ def find_mismatch(text):
         return opening_brackets_stack[0].position+1
 
 def main():
-    text = input()
-    mismatch = find_mismatch(text)
+    userInput = input()
+    if userInput == 'F':
+        fileName = input()
+        textFile = open(fileName)
+        text = textFile.read()
+        if IOError:
+            print('File name error!')
+        return
+    elif userInput == 'I':
+        textInput = input()
+    else:
+        print('Input error!')
+        return
+
+    mismatch = find_mismatch(textInput)
     print(mismatch)
 
 if __name__ == "__main__":
