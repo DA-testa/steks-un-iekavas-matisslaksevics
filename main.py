@@ -33,7 +33,7 @@ def main():
         if mismatch == "":
             print('Success')
         else:
-            print(mismatch[-1].position)
+            print(mismatch+1)
 
 if __name__ == "__main__":
     main()
