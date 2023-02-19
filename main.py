@@ -30,6 +30,10 @@ def main():
     if "I" in text:
         mismatch = find_mismatch(text)
         print(mismatch)
+        if mismatch == "":
+            print('Success')
+        else:
+            print(mismatch[-1].position)
 
 if __name__ == "__main__":
     main()
